@@ -8,6 +8,7 @@ const favicon = require('serve-favicon');
 const http = require('http');
 global.mysql = require('mysql2');
 const compression = require('compression');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const express_server = http.createServer(app);
@@ -36,7 +37,7 @@ app.use(bp.urlencoded({
 
 app.use(bp.json());
 
-app.use(cp(process.env.key));
+app.use(cp());
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 

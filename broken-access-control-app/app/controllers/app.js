@@ -2,12 +2,12 @@ const controllers = {};
 
 controllers.get_user_home = async (request, response) => {
 	response.render('userhomepage.ejs', {
-		username: request.signedCookies.session_id
+		username: request.cookies.session_id
 	});
 }
 
 controllers.logout = async (request, response) => {
-	if (request.signedCookies.session_id) {
+	if (request.cookies.session_id) {
 		response.clearCookie('session_id');
 		response.redirect('/');
 	} else {

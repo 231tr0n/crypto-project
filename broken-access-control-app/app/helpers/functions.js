@@ -1,5 +1,17 @@
 let functions = {}
 
+functions.jwt_sign = (data) => {
+	return jwt.sign(data, process.env.key);
+}
+
+functions.jwt_verify = (token) => {
+	try {
+		return jwt.verify(token, process.env.key);
+	} catch (error) {
+		return false;
+	}
+}
+
 functions.random_string_generator = (length) => {
 	let characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	let random_string = '';

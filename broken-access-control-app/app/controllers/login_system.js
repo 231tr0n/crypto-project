@@ -25,10 +25,13 @@ controllers.login = async (request, response) => {
 	if (request.body.username && request.body.password) {
 		const results = await db_query('SELECT * FROM users WHERE username = ? and password = ?', [request.body.username, request.body.password]);
 		if (results.length == 1) {
-			response.cookie('session_id', request.body.username, {
+			let temp = {
+				username: request.body.username
+			};
+			let token = helpers.jwt_sign(temp);
+			response.cookie('session_id', token, {
 				httpOnly: true,
 				sameSite: true,
-				signed: true
 			});
 			response.redirect('/home');
 		} else {
