@@ -1,8 +1,10 @@
 const controllers = {};
+const helpers = require('./../helpers/functions.js');
 
 controllers.get_user_home = async (request, response) => {
+	let temp = helpers.jwt_verify(request.cookies.session_id);
 	response.render('userhomepage.ejs', {
-		username: request.cookies.session_id
+		username: temp.username
 	});
 }
 
