@@ -8,7 +8,7 @@ const favicon = require('serve-favicon');
 const http = require('http');
 global.mysql = require('mysql2');
 const compression = require('compression');
-const jwt = require('jsonwebtoken');
+global.jwt = require('jsonwebtoken');
 
 const app = express();
 const express_server = http.createServer(app);
