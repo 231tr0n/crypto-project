@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/userconfig.css" />
+	</head>
+<style>
+input {
+	display: block;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: none;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
+}
+</style>
+	<body style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),
+	url(images/background.jpg);height: 100vh; background-size: 100% 100%;
+	background-position: center;">
+		<div class="heading">
+			<h3><span>&nbsp;&nbsp; Data Vault &nbsp;&nbsp;</span></h3>
+		</div>
+	<div style="text-align: center;">
+		<h2 style="color: #fff; padding: 50 50;"><%= username %></h2>
+		<form action = '/logout' method = 'post'>
+			 <button type = 'submit' class="login-button" value="Logout">
+				 Logout
+			</button>
+		</form>
+	</div>
+	</body>
+</html>

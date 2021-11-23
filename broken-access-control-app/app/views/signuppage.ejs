@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/login.css">
+	</head>
+	<style>
+		.main-form {
+			height: 740px !important;
+		}
+	</style>
+	<body style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url(images/background.jpg);height: 100vh; background-size: 100% 100%;background-position: center;">
+		<div class="tsparticles"></div>
+		<div class="main-form">
+			<form class="main-form" action = '/signup' name = 'signup' method = 'post'>
+				<h3>SignUp Form</h3>
+				<label for="username">Username</label>
+				<input type = 'text' name = 'username' placeholder = 'Enter Username' maxlength = '<%= username_length %>' required>
+
+				<label for="password">Password</label>
+				<input type = 'password' name = 'password' placeholder = 'Enter Password' maxlength = '<%= password_length %>' required>
+
+				<label for="password">Re-check Password</label>
+				<input type = 'password' name = 'check_password' placeholder = 'Re-Enter Password' maxlength = '<%= password_length %>' required>
+				<div style="color:#ff6347;" name = 'error' class="error"><% if (error == 1) { %><%= "Username already exists." %><% } %></div>
+				<button type = 'submit' value = 'Submit'>
+					Signup
+				</button>
+			</form>
+			<form class="pos" action = '/login' method = 'get'>
+				<input type = 'submit' value = 'Login'>
+			</form>
+		</div>
+	</body>
+</html>
