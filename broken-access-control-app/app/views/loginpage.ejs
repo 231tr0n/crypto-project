@@ -14,9 +14,9 @@
 			<form class="main-form" action = '/login' name = 'login' method = 'post'>
 				<h3>Login Here</h3>
 				<label for="username">Username</label>
-				<input type = 'text' name = 'username' placeholder = 'Enter Username' maxlength = '<%= username_length %>' required>
+				<input type = 'text' name = 'username' placeholder = 'Enter Username' maxlength = '<%= max_username_length %>' required>
 				<label for="password">Password</label>
-				<input type = 'password' name = 'password' placeholder = 'Enter Password' maxlength = '<%= password_length %>' required>
+				<input type = 'password' name = 'password' placeholder = 'Enter Password' maxlength = '<%= max_password_length %>' required>
 				<div style="color:#ff6347;" id = 'error'><% if (error) { %><%= "Username or password incorrect." %><% } %></div>
 				<button type="submit" value="Verify">Verify</button>
 			</form>

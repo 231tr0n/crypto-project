@@ -44,8 +44,6 @@ global.__basedir = __dirname;
 global.__tempdir = path.join(__dirname, 'temp');
 global.max_username_length = 50;
 global.max_password_length = 50;
-global.max_session_id_length = 50;
-global.session_id_length = 20;
 global.delay_request = 2000;
 
 require('./config/database.js');
