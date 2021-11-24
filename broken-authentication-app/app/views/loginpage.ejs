@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "css/login.css">
+	</head>
+	<style>
+		.main-form{
+			height: 600px !important;
+		}
+	</style>
+	<body style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url(images/background.jpg);height: 100vh; background-size: 100% 100%;background-position: center;">
+		<div id="tsparticles"></div>
+		<div class="social">
+			<form class="main-form" action = '/login' name = 'login' method = 'post'>
+				<h3>Login Here</h3>
+				<label for="username">Username</label>
+				<input type = 'text' name = 'username' placeholder = 'Enter Username' maxlength = '<%= username_length %>' required>
+				<label for="password">Password</label>
+				<input type = 'password' name = 'password' placeholder = 'Enter Password' maxlength = '<%= password_length %>' required>
+				<div style="color:#ff6347;" id = 'error'><% if (error == 1) { %><%= "Username incorrect." %><% } else if (error == 2) { %><%= "Password incorrect." %><% } %></div>
+				<button type="submit" value="Verify">Verify</button>
+			</form>
+		</div>
+	</body>
+</html>
