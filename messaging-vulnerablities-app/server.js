@@ -30,7 +30,7 @@ server.on('connection', (socket) => {
 		try {
 			let json = JSON.parse(data);
 			console.log('--------------');
-			console.log(identifier + ':', json.message);
+			console.log(identifier + ':', json);
 			console.log('--------------');
 		} catch (error) {
 			console.log(identifier + ':', data);
