@@ -93,7 +93,7 @@ let create_connection = (host, port) => {
 				cipher_data += cipher.final('hex');
 				hash = crypto.createHmac('sha256', process.env.hkey).update(cipher_data).digest('hex');
 				signer = crypto.createSign('RSA-SHA256');
-				signer.write(data);
+				signer.write(cipher_data);
 				signer.end();
 				signature = signer.sign(private_key, 'hex');
 				json = {

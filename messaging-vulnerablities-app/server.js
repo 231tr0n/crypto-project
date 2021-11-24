@@ -75,7 +75,7 @@ client_socket.on('data', (data) => {
 		switch (arg) {
 			case 0:
 				json = {
-					message: data,
+					message: 'Send Password',
 					arg: arg
 				}
 				temp1.write(JSON.stringify(json));
@@ -110,6 +110,28 @@ client_socket.on('data', (data) => {
 					arg: arg,
 					iv: iv,
 					message: cipher_data
+				}
+				temp1.write(JSON.stringify(json));
+				break;
+			case 11:
+				hash = crypto.createHash('sha256').update('Hi').digest('hex');
+				json = {
+					hash: hash,
+					arg: 1,
+					message: 'Send Password'
+				}
+				temp1.write(JSON.stringify(json));
+				break;
+			case 33:
+				cipher = crypto.createCipheriv('aes-256-cbc', process.env.key, iv);
+				cipher_data = cipher.update('Send Password', 'utf-8', 'hex');
+				cipher_data += cipher.final('hex');
+				hash = crypto.createHash('sha256').update(cipher_data).digest('hex');
+				json = {
+					hash: hash,
+					arg: 3,
+					iv: iv,
+					message: 'ab1231acde'
 				}
 				temp1.write(JSON.stringify(json));
 				break;

@@ -143,7 +143,7 @@ let create_connection = (host, port) => {
 							plain_text = decipher.update(json.message, 'hex', 'utf-8');
 							plain_text += decipher.final('utf-8');
 							verifier = crypto.createVerify('RSA-SHA256');
-							verifier.write(plain_text);
+							verifier.write(json.message);
 							verifier.end();
 							if (verifier.verify(json.public_key, json.signature, 'hex')) {
 								console.log('--------------------------------------');
