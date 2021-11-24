@@ -6,7 +6,7 @@ const cp = require('cookie-parser');
 const bp = require('body-parser');
 const favicon = require('serve-favicon');
 const http = require('http');
-global.mysql = require('mysql2');
+global.mysql = require('mariadb/callback');
 const compression = require('compression');
 global.jwt = require('jsonwebtoken');
 
