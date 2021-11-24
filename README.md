@@ -1,6 +1,6 @@
 # crypto-project
 
-Instructions to run the project:-
+Instructions to run the project messaging vulnerabilities app:-
 Go into the project directory and then run the following command to install the dependencies.
 ```bash
 npm install
